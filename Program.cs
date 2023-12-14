@@ -2,6 +2,7 @@
 using SumoMVC.Models;
 using SumoMVC.Views;
 using System;
+using System.Windows.Forms;
 
 namespace SumoMVC
 {
@@ -9,6 +10,7 @@ namespace SumoMVC
     {
         static void Main(string[] args)
         {
+            // Tworzenie modelu, widoku i kontrolera
             string[] options = { "Play", "About", "Ranking", "Exit" };
             string prompt = @"
 
@@ -29,31 +31,32 @@ namespace SumoMVC
 
             MenuController menuController = new MenuController(menuView, menuModel);
 
-            while (true)
+            // Tworzenie instancji Form1
+            MenuForm form1 = new MenuForm();
+
+            // Przypisanie zdarzenia Load do ustawienia początkowego widoku
+            form1.Load += (sender, e) => menuController.ShowMenu();
+
+            // Przypisanie zdarzenia KeyDown do obsługi klawiszy
+            form1.KeyDown += (sender, e) =>
             {
-                Console.Clear();
-                menuController.ShowMenu();
-
-
-                var key = Console.ReadKey(true);
-
-                switch (key.Key)
+                switch (e.KeyCode)
                 {
-                    case ConsoleKey.UpArrow:
+                    case Keys.Up:
                         menuModel.SelectedIndex--;
                         if (menuModel.SelectedIndex == -1)
                         {
                             menuModel.SelectedIndex = menuModel.Options.Length - 1;
                         }
                         break;
-                    case ConsoleKey.DownArrow:
+                    case Keys.Down:
                         menuModel.SelectedIndex++;
                         if (menuModel.SelectedIndex == menuModel.Options.Length)
                         {
                             menuModel.SelectedIndex = 0;
                         }
                         break;
-                    case ConsoleKey.Enter:
+                    case Keys.Enter:
                         switch (menuModel.SelectedIndex)
                         {
                             case 0:
@@ -76,9 +79,10 @@ namespace SumoMVC
                         }
                         break;
                 }
+            };
 
-            }
-
+            // Uruchomienie aplikacji Windows Forms
+            Application.Run(form1);
         }
     }
 }

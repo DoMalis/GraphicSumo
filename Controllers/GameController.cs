@@ -163,26 +163,26 @@ namespace SumoMVC.Controllers
             //obsluga klawiszy 1 zawodnika, po każdym wcisnieciu strzałki kasujemy pozycję gracza na planszy i stawiamy w nowym miejscu
             if (keyPressed == ConsoleKey.A && player1.x > gameModel.X0 + 1)
             {
-                    gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
                 player1.Weight -= 1;
                 player1.x--;
             }
 
             if (keyPressed == ConsoleKey.W && player1.y > gameModel.Y0 + 1)
             {
-                    gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
                 player1.Weight -= 1;
                 player1.y--;
             }
             if (keyPressed == ConsoleKey.D && player1.x < gameModel.X0 + 2 * sideLength - 1)
             {
-                    gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
                 player1.Weight -= 1;
                 player1.x++;
             }
             if (keyPressed == ConsoleKey.S && player1.y < gameModel.Y0 + sideLength)
             {
-                    gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player1, sideLength, gameModel.Y0);
                 player1.Weight -= 1;
                 player1.y++;
 
@@ -191,14 +191,14 @@ namespace SumoMVC.Controllers
             //obsluga klawiszy 2 zawodnika
             if (keyPressed == ConsoleKey.LeftArrow && player2.x > gameModel.X0 + 1)
             {
-                    gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
                 player2.Weight -= 1;
                 player2.x--;
             }
             if (keyPressed == ConsoleKey.UpArrow && player2.y > gameModel.Y0 + 1)
             {
 
-                    gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
                 player2.Weight -= 1;
                 player2.y--;
             }
@@ -210,7 +210,7 @@ namespace SumoMVC.Controllers
             }
             if (keyPressed == ConsoleKey.DownArrow && player2.y < gameModel.Y0 + sideLength)
             {
-                    gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
+                gameView.deletePlayerFromOldPositionInField(player2, sideLength, gameModel.Y0);
                 player2.Weight -= 1;
                 player2.y++;
             }
