@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SumoMVC.Controllers;
+using SumoMVC.Models;
+using SumoMVC.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +22,14 @@ namespace SumoMVC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PlayForm playForm = new PlayForm();
-            playForm.Show();
+
+            //PlayForm playForm = new PlayForm();
+            //playForm.Show();
             this.Hide();
+            IGameView gV= new GameView();
+            IGameModel gM=new GameModel();
+            GameController gC = new GameController(gV,gM);
+            gC.StartGame();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,6 +57,11 @@ namespace SumoMVC
             RankingForm rankingForm = new RankingForm();
             rankingForm.Show();
             this.Hide();
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

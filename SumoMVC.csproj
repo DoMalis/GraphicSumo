@@ -53,9 +53,21 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChooseGameModeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseGameModeForm.Designer.cs">
+      <DependentUpon>ChooseGameModeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\IGameController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="CreatePlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePlayerForm.Designer.cs">
+      <DependentUpon>CreatePlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RankingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +118,12 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChooseGameModeForm.resx">
+      <DependentUpon>ChooseGameModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePlayerForm.resx">
+      <DependentUpon>CreatePlayerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExitForm.resx">
       <DependentUpon>ExitForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,9 +133,28 @@
     <EmbeddedResource Include="PlayForm.resx">
       <DependentUpon>PlayForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RankingForm.resx">
       <DependentUpon>RankingForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\player_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\block_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\environment_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\environment_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\ground_06.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

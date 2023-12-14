@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SumoMVC.Controllers
 {
@@ -23,21 +24,50 @@ namespace SumoMVC.Controllers
         
         public void CreatePlayers() //to oodzielny widok
         {
-            gameModel.Player1=gameView.CreatePlayer(1);
-            gameModel.Player2=gameView.CreatePlayer(2);
+            //gameModel.Player1=gameView.CreatePlayer(1);
+            //gameModel.Player2=gameView.CreatePlayer(2);
+            
+            CreatePlayerForm player1 = new CreatePlayerForm(1);
+            if (player1.ShowDialog() == DialogResult.OK)
+            {
+                gameModel.Player1 = new Player(player1.PlayerName, 1);
+            }
+            else
+            {
+                return;
+            }
 
+            CreatePlayerForm player2 = new CreatePlayerForm(2);
+
+            if (player2.ShowDialog() == DialogResult.OK)
+            {
+                gameModel.Player2 = new Player(player2.PlayerName, 2);
+            }
+            else
+            {
+                return;
+            }
         }
-        
+
         public void ChooseGameMode() //to oddzileny widok
         {
-            gameModel.Mode = gameView.ChooseGameMode();
+            ChooseGameModeForm modeForm = new ChooseGameModeForm();
+            if (modeForm.ShowDialog() == DialogResult.OK)
+            {
+            gameModel.Mode = modeForm.Mode;
+            }
         }
 
         public void StartGame() 
         {
-            CreatePlayers();
-            ChooseGameMode();
-            gameView.DisplayStartGame();
+            CreatePlayers(); //zrobione
+            ChooseGameMode(); //zrobione
+
+            gameView.DisplayStartGame(); //nope
+
+            PlayForm playForm=new PlayForm(gameModel.Player1,gameModel.Player2);
+            playForm.ShowDialog();
+
             CreateGameView();
             GameLogic();
             gameView.DisplayEndGame();
@@ -47,6 +77,7 @@ namespace SumoMVC.Controllers
 
        public void CreateGameView()
        {
+
             gameView.DisplayPlayersInformation(gameModel.Player1, gameModel.Player2);
             gameView.DisplayBattleFieldBorders(gameModel.X0,gameModel.Y0,gameModel.SideLength);
             gameModel.ObstacleGrid=GenerateObstacles(gameModel.SideLength);

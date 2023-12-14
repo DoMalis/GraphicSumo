@@ -50,7 +50,7 @@ namespace SumoMVC
                         }
                         break;
                     case Keys.Down:
-                        menuModel.SelectedIndex++;
+                        menuModel.SelectedIndex++; 
                         if (menuModel.SelectedIndex == menuModel.Options.Length)
                         {
                             menuModel.SelectedIndex = 0;

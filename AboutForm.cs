@@ -24,5 +24,10 @@ namespace SumoMVC
             this.Close();
 
         }
+
+        private void AboutForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

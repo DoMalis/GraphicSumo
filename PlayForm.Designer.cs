@@ -28,55 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.player2 = new System.Windows.Forms.PictureBox();
+            this.borders = new System.Windows.Forms.PictureBox();
+            this.food = new System.Windows.Forms.PictureBox();
+            this.floor = new System.Windows.Forms.PictureBox();
+            this.player1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.food)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.floor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // player2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(268, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter a name for player number nr 1";
+            this.player2.Image = global::SumoMVC.Properties.Resources.player_23;
+            this.player2.Location = new System.Drawing.Point(285, 74);
+            this.player2.Name = "player2";
+            this.player2.Size = new System.Drawing.Size(56, 60);
+            this.player2.TabIndex = 7;
+            this.player2.TabStop = false;
             // 
-            // textBox1
+            // borders
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 1;
+            this.borders.Image = global::SumoMVC.Properties.Resources.block_05;
+            this.borders.Location = new System.Drawing.Point(126, 144);
+            this.borders.Name = "borders";
+            this.borders.Size = new System.Drawing.Size(65, 64);
+            this.borders.TabIndex = 6;
+            this.borders.TabStop = false;
+            this.borders.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // button1
+            // food
             // 
-            this.button1.Location = new System.Drawing.Point(322, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.food.Image = global::SumoMVC.Properties.Resources.environment_10;
+            this.food.Location = new System.Drawing.Point(589, 200);
+            this.food.Name = "food";
+            this.food.Size = new System.Drawing.Size(64, 64);
+            this.food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.food.TabIndex = 5;
+            this.food.TabStop = false;
+            // 
+            // floor
+            // 
+            this.floor.Image = global::SumoMVC.Properties.Resources.ground_06;
+            this.floor.Location = new System.Drawing.Point(456, 158);
+            this.floor.Name = "floor";
+            this.floor.Size = new System.Drawing.Size(63, 50);
+            this.floor.TabIndex = 4;
+            this.floor.TabStop = false;
+            this.floor.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // player1
+            // 
+            this.player1.Image = global::SumoMVC.Properties.Resources.player_23;
+            this.player1.Location = new System.Drawing.Point(170, 230);
+            this.player1.Name = "player1";
+            this.player1.Size = new System.Drawing.Size(56, 60);
+            this.player1.TabIndex = 1;
+            this.player1.TabStop = false;
+            this.player1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.player2);
+            this.Controls.Add(this.borders);
+            this.Controls.Add(this.food);
+            this.Controls.Add(this.floor);
+            this.Controls.Add(this.player1);
             this.Name = "PlayForm";
             this.Text = "PlayForm";
+            this.Load += new System.EventHandler(this.PlayForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.borders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.food)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.floor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox player1;
+        private System.Windows.Forms.PictureBox floor;
+        private System.Windows.Forms.PictureBox food;
+        private System.Windows.Forms.PictureBox borders;
+        private System.Windows.Forms.PictureBox player2;
     }
 }
