@@ -18,8 +18,10 @@ namespace SumoMVC
         public CountDownForm()
         {
             InitializeComponent();
-            countdownValue = 3; 
-            UpdateCountdownLabel();
+            countdownValue = 3;
+            label1.Text = countdownValue.ToString();
+            countdownValue = 2;
+
             InitializeCountdownTimer();
         }
 
@@ -36,9 +38,10 @@ namespace SumoMVC
         {
             if (countdownValue >=1)
             {
-                countdownValue--;  
-               if(countdownValue != 0) 
+                if (countdownValue != 0) 
                     UpdateCountdownLabel();
+                countdownValue--;
+
             }
             else
             {
