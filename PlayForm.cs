@@ -207,5 +207,9 @@ namespace SumoMVC
 
         }
 
+        private void food_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

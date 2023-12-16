@@ -88,13 +88,6 @@ namespace SumoMVC.Controllers
                 gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, playObstacleForm.time);
             }
         }
-       public void CreateGameView()
-       {
-
-            gameView.DisplayPlayersInformation(gameModel.Player1, gameModel.Player2);
-            gameView.DisplayBattleFieldBorders(gameModel.X0,gameModel.Y0,gameModel.SideLength);
-            gameModel.ObstacleGrid=GenerateObstacles(gameModel.SideLength);
-       }
 
 
 
@@ -104,6 +97,13 @@ namespace SumoMVC.Controllers
             endForm.ShowDialog();
         }
 
+   /*    public void CreateGameView()
+       {
+
+            gameView.DisplayPlayersInformation(gameModel.Player1, gameModel.Player2);
+            gameView.DisplayBattleFieldBorders(gameModel.X0,gameModel.Y0,gameModel.SideLength);
+            gameModel.ObstacleGrid=GenerateObstacles(gameModel.SideLength);
+       }*/
         //public void End()
         //{
           //  gameView.EndGame(gameModel.GameResult,gameModel.Mode);
@@ -200,11 +200,11 @@ namespace SumoMVC.Controllers
             gameModel.GameResult= new GameResult((gameModel.Player1.Weight>gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, time);
         }
     */  
-        public bool CheckCollision(int x, int y, bool[,] obstacleGrid)
+       /* public bool CheckCollision(int x, int y, bool[,] obstacleGrid)
         {
             // sprawdzanie czy nowa pozycja koliduje z przeszkodą
             return obstacleGrid[x - (gameModel.X0+1), y - (gameModel.Y0+1)];
-        }
+        }*/
 
 
 
@@ -267,7 +267,7 @@ namespace SumoMVC.Controllers
             }
 
         }*/
-        public void MovingWithObstacles(Player player1, Player player2, ConsoleKey keyPressed, int sideLength, bool[,] obstacleGrid)
+      /*  public void MovingWithObstacles(Player player1, Player player2, ConsoleKey keyPressed, int sideLength, bool[,] obstacleGrid)
         {
             //obsluga klawiszy 1 zawodnika, po każdym wcisnieciu strzałki kasujemy pozycję gracza na planszy i stawiamy w nowym miejscu
             if (keyPressed == ConsoleKey.A && player1.x > gameModel.X0 + 1)
@@ -493,6 +493,6 @@ namespace SumoMVC.Controllers
 
             }
             return obstacleGrid;
-        }
+        }*/
     }
 }

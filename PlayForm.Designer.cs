@@ -47,7 +47,7 @@
             // 
             // ringSumo
             // 
-            this.ringSumo.Image = global::SumoMVC.Properties.Resources.SumoRing;
+            this.ringSumo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ringSumo.Location = new System.Drawing.Point(205, 50);
             this.ringSumo.Name = "ringSumo";
             this.ringSumo.Size = new System.Drawing.Size(388, 382);
@@ -57,7 +57,7 @@
             // player1
             // 
             this.player1.Image = global::SumoMVC.Properties.Resources.player_23;
-            this.player1.Location = new System.Drawing.Point(246, 83);
+            this.player1.Location = new System.Drawing.Point(695, 159);
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(64, 64);
             this.player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -67,7 +67,7 @@
             // player2
             // 
             this.player2.Image = global::SumoMVC.Properties.Resources.player_23;
-            this.player2.Location = new System.Drawing.Point(492, 331);
+            this.player2.Location = new System.Drawing.Point(695, 299);
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(64, 64);
             this.player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -76,7 +76,8 @@
             // 
             // innerRing
             // 
-            this.innerRing.Location = new System.Drawing.Point(246, 83);
+            this.innerRing.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.innerRing.Location = new System.Drawing.Point(236, 79);
             this.innerRing.Name = "innerRing";
             this.innerRing.Size = new System.Drawing.Size(321, 321);
             this.innerRing.TabIndex = 3;
@@ -93,20 +94,20 @@
             // p2Info
             // 
             this.p2Info.AutoSize = true;
-            this.p2Info.Location = new System.Drawing.Point(759, 13);
+            this.p2Info.Location = new System.Drawing.Point(678, 23);
             this.p2Info.Name = "p2Info";
             this.p2Info.Size = new System.Drawing.Size(0, 16);
             this.p2Info.TabIndex = 5;
             // 
             // food
             // 
-            this.food.Image = global::SumoMVC.Properties.Resources.environment_10;
-            this.food.Location = new System.Drawing.Point(695, 229);
+            this.food.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.food.Location = new System.Drawing.Point(706, 252);
             this.food.Name = "food";
-            this.food.Size = new System.Drawing.Size(64, 64);
-            this.food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.food.Size = new System.Drawing.Size(24, 22);
             this.food.TabIndex = 6;
             this.food.TabStop = false;
+            this.food.Click += new System.EventHandler(this.food_Click);
             // 
             // TimeText
             // 
@@ -125,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(815, 460);
             this.Controls.Add(this.TimeText);
             this.Controls.Add(this.player2);
@@ -133,9 +134,9 @@
             this.Controls.Add(this.food);
             this.Controls.Add(this.p2Info);
             this.Controls.Add(this.p1Info);
-            this.Controls.Add(this.ringSumo);
             this.Controls.Add(this.innerRing);
-            this.ForeColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.ringSumo);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "PlayForm";
             this.Text = "PlayForm";
             this.Load += new System.EventHandler(this.PlayForm_Load);

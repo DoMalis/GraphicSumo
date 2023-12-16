@@ -28,13 +28,13 @@ namespace SumoMVC
             IGameModel gM=new GameModel();
             GameController gC = new GameController(gV,gM);
 
-            gM.Player1 = new Player("asia", 1);
-            gM.Player2 = new Player("basia", 2);
+            //gM.Player1 = new Player("asia", 1);
+            //gM.Player2 = new Player("basia", 2);
 
-            PlayObstacleForm playObstacleForm = new PlayObstacleForm(gM);
-            playObstacleForm.ShowDialog();
+            //PlayObstacleForm playObstacleForm = new PlayObstacleForm(gM);
+            //playObstacleForm.ShowDialog();
 
-            //gC.StartGame();
+            gC.StartGame();
 
             this.Show();
         }
