@@ -23,11 +23,8 @@ namespace SumoMVC.Controllers
             this.gameModel = gameModel;
         }
         
-        public void CreatePlayers() //to oodzielny widok
-        {
-            //gameModel.Player1=gameView.CreatePlayer(1);
-            //gameModel.Player2=gameView.CreatePlayer(2);
-            
+        public void CreatePlayers() 
+        {         
             CreatePlayerForm player1 = new CreatePlayerForm(1);
             if (player1.ShowDialog() == DialogResult.OK)
             {
@@ -50,7 +47,7 @@ namespace SumoMVC.Controllers
             }
         }
 
-        public void ChooseGameMode() //to oddzileny widok
+        public void ChooseGameMode() 
         {
             ChooseGameModeForm modeForm = new ChooseGameModeForm();
             if (modeForm.ShowDialog() == DialogResult.OK)
@@ -63,8 +60,6 @@ namespace SumoMVC.Controllers
         {
             CreatePlayers(); //zrobione
             ChooseGameMode(); //zrobione
-
-            //gameView.DisplayStartGame(); //nope
             using (CountDownForm countDownForm = new CountDownForm())
             {
                 if (countDownForm.ShowDialog() == DialogResult.OK)
@@ -113,10 +108,17 @@ namespace SumoMVC.Controllers
        }
 
 
+
         public void End()
         {
-            gameView.EndGame(gameModel.GameResult,gameModel.Mode);
+            EndForm endForm = new EndForm(gameModel);    
+            endForm.ShowDialog();
         }
+
+        //public void End()
+        //{
+          //  gameView.EndGame(gameModel.GameResult,gameModel.Mode);
+        //}
 
 
     /*    public void GameLogic()

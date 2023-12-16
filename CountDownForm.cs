@@ -61,5 +61,10 @@ namespace SumoMVC
                 label1.Text = countdownValue.ToString();
            
         }
+
+        private void CountDownForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

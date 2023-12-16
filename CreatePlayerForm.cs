@@ -38,8 +38,7 @@ namespace SumoMVC
             else
             {
                 DialogResult = DialogResult.OK; // Zwróć OK, gdy gracz utworzy nazwę
-                Close();
-            }
+                this.Hide();            }
         }
 
         private void label1_Click(object sender, EventArgs e)

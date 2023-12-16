@@ -49,6 +49,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CountDownForm";
             this.Text = "CountDownForm";
+            this.Load += new System.EventHandler(this.CountDownForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

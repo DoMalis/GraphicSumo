@@ -23,13 +23,12 @@ namespace SumoMVC
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //PlayForm playForm = new PlayForm();
-            //playForm.Show();
             this.Hide();
             IGameView gV= new GameView();
             IGameModel gM=new GameModel();
             GameController gC = new GameController(gV,gM);
             gC.StartGame();
+            this.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
