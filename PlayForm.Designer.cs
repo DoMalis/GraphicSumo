@@ -150,7 +150,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox player2;
         private System.Windows.Forms.PictureBox player1;
         private System.Windows.Forms.PictureBox ringSumo;

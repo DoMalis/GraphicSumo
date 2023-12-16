@@ -24,8 +24,8 @@ namespace SumoMVC
         Rectangle player2Space;
         Rectangle foodSpace;
         Food food1;
-
-
+        private DateTime startTime;
+        public TimeSpan time;
         private int _ticks; 
         public PlayForm(IGameModel gameModel)
         {
@@ -41,6 +41,7 @@ namespace SumoMVC
             player1.Location = new Point(innerRing.Left, innerRing.Top);
             player2.Location = new Point(innerRing.Right-player1.Width, innerRing.Bottom - player2.Width);
             food1 = new Food();
+            startTime = DateTime.Now;
         }
 
 
@@ -130,11 +131,13 @@ namespace SumoMVC
             if (FinishCondition(player1Space, player2Space) == 1)
             {
                 MessageBox.Show("player1 won");
+                time = DateTime.Now-startTime;
                 Close();
             } 
             else if (FinishCondition(player1Space, player2Space) == 2)   
             { 
                 MessageBox.Show("player2 won");
+                time = DateTime.Now - startTime;
                 Close(); 
             }
 
@@ -201,19 +204,7 @@ namespace SumoMVC
         {
             _ticks++;
             TimeText.Text = "" + _ticks;
-        }
-        public void DrawPlayer(Player player)
-        {
-            if (player.Id == 1)
-            {
-                player1.Location=new Point(player.x, player.y);
-            }
-            if (player.Id == 2)
-            {
-                player2.Location = new Point(player.x, player.y);
-            }
 
-            
         }
 
     }
