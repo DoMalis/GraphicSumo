@@ -27,19 +27,25 @@ namespace SumoMVC
         private void button1_Click(object sender, EventArgs e)
         {
             Mode = 0;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+
+            this.Close();
       }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Mode = 1;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Mode = 2;
-            this.Hide();
+            DialogResult = DialogResult.OK;
+
+            this.Close();
         }
     }
 }

@@ -76,8 +76,6 @@ namespace SumoMVC.Controllers
         {
             if (gameModel.Mode == 0)
             {
-                TimeSpan time = new TimeSpan(2, 30, 0);
-
                 PlayForm playForm = new PlayForm(gameModel);
                 playForm.ShowDialog();
                 gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, playForm.time);
@@ -85,7 +83,9 @@ namespace SumoMVC.Controllers
             }
             else
             {
-                //MovingWithObstacles(gameModel.Player1, gameModel.Player2, keyPressed, sideLength, gameModel.ObstacleGrid);
+                PlayObstacleForm playObstacleForm = new PlayObstacleForm(gameModel);
+                playObstacleForm.ShowDialog();
+                gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, playObstacleForm.time);
             }
         }
        public void CreateGameView()
