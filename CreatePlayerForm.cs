@@ -19,8 +19,10 @@ namespace SumoMVC
         {
             InitializeComponent();
             PlayerId = playerId;
+        textBox1.KeyDown += TextBox1_KeyDown; // Subscribe to KeyDown event
 
         }
+
 
         private void CreatePlayerForm_Load(object sender, EventArgs e)
         {
@@ -41,9 +43,16 @@ namespace SumoMVC
                 this.Hide();            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // If Enter is pressed, trigger the button1_Click method
+                button1_Click(sender, e);
+            }
         }
+
+
     }
 }

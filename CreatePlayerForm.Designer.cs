@@ -41,7 +41,6 @@
             this.label1.Size = new System.Drawing.Size(217, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Enter a name for player number nr 1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
