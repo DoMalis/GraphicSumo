@@ -28,95 +28,136 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.player2 = new System.Windows.Forms.PictureBox();
-            this.borders = new System.Windows.Forms.PictureBox();
-            this.food = new System.Windows.Forms.PictureBox();
-            this.floor = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            this.ringSumo = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.borders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.food)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.floor)).BeginInit();
+            this.player2 = new System.Windows.Forms.PictureBox();
+            this.innerRing = new System.Windows.Forms.PictureBox();
+            this.p1Info = new System.Windows.Forms.Label();
+            this.p2Info = new System.Windows.Forms.Label();
+            this.food = new System.Windows.Forms.PictureBox();
+            this.TimeText = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ringSumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.innerRing)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.food)).BeginInit();
             this.SuspendLayout();
             // 
-            // player2
+            // ringSumo
             // 
-            this.player2.Image = global::SumoMVC.Properties.Resources.player_23;
-            this.player2.Location = new System.Drawing.Point(285, 74);
-            this.player2.Name = "player2";
-            this.player2.Size = new System.Drawing.Size(56, 60);
-            this.player2.TabIndex = 7;
-            this.player2.TabStop = false;
-            // 
-            // borders
-            // 
-            this.borders.Image = global::SumoMVC.Properties.Resources.block_05;
-            this.borders.Location = new System.Drawing.Point(126, 144);
-            this.borders.Name = "borders";
-            this.borders.Size = new System.Drawing.Size(65, 64);
-            this.borders.TabIndex = 6;
-            this.borders.TabStop = false;
-            this.borders.Click += new System.EventHandler(this.pictureBox6_Click);
-            // 
-            // food
-            // 
-            this.food.Image = global::SumoMVC.Properties.Resources.environment_10;
-            this.food.Location = new System.Drawing.Point(589, 200);
-            this.food.Name = "food";
-            this.food.Size = new System.Drawing.Size(64, 64);
-            this.food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.food.TabIndex = 5;
-            this.food.TabStop = false;
-            // 
-            // floor
-            // 
-            this.floor.Image = global::SumoMVC.Properties.Resources.ground_06;
-            this.floor.Location = new System.Drawing.Point(456, 158);
-            this.floor.Name = "floor";
-            this.floor.Size = new System.Drawing.Size(63, 50);
-            this.floor.TabIndex = 4;
-            this.floor.TabStop = false;
-            this.floor.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.ringSumo.Image = global::SumoMVC.Properties.Resources.SumoRing;
+            this.ringSumo.Location = new System.Drawing.Point(205, 50);
+            this.ringSumo.Name = "ringSumo";
+            this.ringSumo.Size = new System.Drawing.Size(388, 382);
+            this.ringSumo.TabIndex = 2;
+            this.ringSumo.TabStop = false;
             // 
             // player1
             // 
             this.player1.Image = global::SumoMVC.Properties.Resources.player_23;
-            this.player1.Location = new System.Drawing.Point(170, 230);
+            this.player1.Location = new System.Drawing.Point(246, 83);
             this.player1.Name = "player1";
-            this.player1.Size = new System.Drawing.Size(56, 60);
+            this.player1.Size = new System.Drawing.Size(64, 64);
+            this.player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player1.TabIndex = 1;
             this.player1.TabStop = false;
-            this.player1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // player2
+            // 
+            this.player2.Image = global::SumoMVC.Properties.Resources.player_23;
+            this.player2.Location = new System.Drawing.Point(492, 331);
+            this.player2.Name = "player2";
+            this.player2.Size = new System.Drawing.Size(64, 64);
+            this.player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.player2.TabIndex = 0;
+            this.player2.TabStop = false;
+            // 
+            // innerRing
+            // 
+            this.innerRing.Location = new System.Drawing.Point(246, 83);
+            this.innerRing.Name = "innerRing";
+            this.innerRing.Size = new System.Drawing.Size(321, 321);
+            this.innerRing.TabIndex = 3;
+            this.innerRing.TabStop = false;
+            // 
+            // p1Info
+            // 
+            this.p1Info.AutoSize = true;
+            this.p1Info.Location = new System.Drawing.Point(12, 9);
+            this.p1Info.Name = "p1Info";
+            this.p1Info.Size = new System.Drawing.Size(0, 16);
+            this.p1Info.TabIndex = 4;
+            // 
+            // p2Info
+            // 
+            this.p2Info.AutoSize = true;
+            this.p2Info.Location = new System.Drawing.Point(759, 13);
+            this.p2Info.Name = "p2Info";
+            this.p2Info.Size = new System.Drawing.Size(0, 16);
+            this.p2Info.TabIndex = 5;
+            // 
+            // food
+            // 
+            this.food.Image = global::SumoMVC.Properties.Resources.environment_10;
+            this.food.Location = new System.Drawing.Point(695, 229);
+            this.food.Name = "food";
+            this.food.Size = new System.Drawing.Size(64, 64);
+            this.food.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.food.TabIndex = 6;
+            this.food.TabStop = false;
+            // 
+            // TimeText
+            // 
+            this.TimeText.AutoSize = true;
+            this.TimeText.Location = new System.Drawing.Point(374, 439);
+            this.TimeText.Name = "TimeText";
+            this.TimeText.Size = new System.Drawing.Size(0, 16);
+            this.TimeText.TabIndex = 7;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(815, 460);
+            this.Controls.Add(this.TimeText);
             this.Controls.Add(this.player2);
-            this.Controls.Add(this.borders);
-            this.Controls.Add(this.food);
-            this.Controls.Add(this.floor);
             this.Controls.Add(this.player1);
+            this.Controls.Add(this.food);
+            this.Controls.Add(this.p2Info);
+            this.Controls.Add(this.p1Info);
+            this.Controls.Add(this.ringSumo);
+            this.Controls.Add(this.innerRing);
+            this.ForeColor = System.Drawing.SystemColors.Control;
             this.Name = "PlayForm";
             this.Text = "PlayForm";
             this.Load += new System.EventHandler(this.PlayForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.borders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.food)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.floor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ringSumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.innerRing)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.food)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox player1;
-        private System.Windows.Forms.PictureBox floor;
-        private System.Windows.Forms.PictureBox food;
-        private System.Windows.Forms.PictureBox borders;
         private System.Windows.Forms.PictureBox player2;
+        private System.Windows.Forms.PictureBox player1;
+        private System.Windows.Forms.PictureBox ringSumo;
+        private System.Windows.Forms.PictureBox innerRing;
+        private System.Windows.Forms.Label p1Info;
+        private System.Windows.Forms.Label p2Info;
+        private System.Windows.Forms.PictureBox food;
+        private System.Windows.Forms.Label TimeText;
+        private System.Windows.Forms.Timer timer2;
     }
 }

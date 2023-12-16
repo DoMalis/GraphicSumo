@@ -165,5 +165,8 @@
   <ItemGroup>
     <None Include="bin\Debug\Images\ground_06.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Images\SumoRing.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
