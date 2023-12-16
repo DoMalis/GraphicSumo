@@ -70,17 +70,6 @@ namespace SumoMVC.Controllers
                 }
             }
 
-
-             //CreateGameView();
-            //GameLogic();
-            //gameView.DisplayEndGame();
-            //End();
-            
-
-            //CreateGameView();
-            //GameLogic();
-            //gameView.DisplayEndGame();
-            //End();
         }
 
         public void GameLogic()
