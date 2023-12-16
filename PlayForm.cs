@@ -35,6 +35,7 @@ namespace SumoMVC
             _ticks = 0;
 
             this.gameModel=gameModel;
+
             Map = new Rectangle(innerRing.Left, innerRing.Top, innerRing.Width, innerRing.Height);
             //ustawiamy graczy w początkowych lokalizacjach
             player1.Location = new Point(innerRing.Left, innerRing.Top);
@@ -48,6 +49,7 @@ namespace SumoMVC
             player1.Focus();
             player2.Focus();
             this.KeyDown += new KeyEventHandler(MovingStandard);
+            timer2.Start();
 
         }
         public void MovingStandard(object sender, KeyEventArgs e)
@@ -108,13 +110,14 @@ namespace SumoMVC
 
 
 
-            if (player1Space.IntersectsWith(foodSpace) && food1.Eaten==false)
+            if (
+                IsIntersectionOverXPercent(player1Space,foodSpace,50f)&& food1.Eaten==false)
             { 
                 gameModel.Player1.Weight += food1.kg;
                 food1.Eaten = true;
                 food.Hide();
             }
-            else if (player2Space.IntersectsWith(foodSpace) && food1.Eaten == false)
+            else if (IsIntersectionOverXPercent(player2Space, foodSpace, 50f) && food1.Eaten == false)
             {
                 gameModel.Player2.Weight += food1.kg;
                 food1.Eaten = true;
@@ -155,7 +158,7 @@ namespace SumoMVC
                 food.Top = random.Next(innerRing.Top, innerRing.Bottom - food.Height);
                 food1.x = food.Left;
                 food1.y = food.Top;
-                foodSpace = new Rectangle(food.Left, food.Right, food.Width, food.Height);
+                foodSpace = new Rectangle(food.Left, food.Top, food.Width, food.Height);
                 food.Show();
             }
 
@@ -165,20 +168,27 @@ namespace SumoMVC
         {
             if (gameModel.Player1.Weight <= 0 || gameModel.Player2.Weight <= 0)
             return gameModel.Player1.Weight > gameModel.Player2.Weight ? 1 : 2; 
-            else { 
-                Rectangle intersection = Rectangle.Intersect(player1Space, player2Space);
-            float intersectionArea = intersection.Width * intersection.Height;
-            // Calculate the area of player1Space
-            float player1Area = player1Space.Width * player1Space.Height;
-                // Check if 60% of player1Space covers player2Space
-                if (intersectionArea / player1Area >= 0.6)
+            else {
+                if (IsIntersectionOverXPercent(player1Space, player2Space, 60f))
                 {
                     return gameModel.Player1.Weight > gameModel.Player2.Weight ? 1 : 2;
-
                 }
             }
             return 0;
         }
+
+        private bool IsIntersectionOverXPercent(Rectangle rect1, Rectangle rect2, float x)
+        {
+            float intersectionArea = Rectangle.Intersect(rect1, rect2).Width * Rectangle.Intersect(rect1, rect2).Height;
+
+            // Oblicz 50% obszaru dla obu obszarów
+            float halfRect1Area = rect1.Width * rect1.Height * x / 100;
+            float halfRect2Area = rect2.Width * rect2.Height * x / 100;
+
+            // Sprawdź, czy pole przecięcia stanowi co najmniej 50% obszaru jednego z obszarów
+            return intersectionArea >= halfRect1Area || intersectionArea >= halfRect2Area;
+        }
+
         private void PlayerInfo()
         {
 
@@ -187,6 +197,11 @@ namespace SumoMVC
 
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            _ticks++;
+            TimeText.Text = "" + _ticks;
+        }
         public void DrawPlayer(Player player)
         {
             if (player.Id == 1)

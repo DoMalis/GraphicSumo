@@ -79,7 +79,7 @@ namespace SumoMVC.Controllers
 
                 PlayForm playForm = new PlayForm(gameModel);
                 playForm.ShowDialog();
-                gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, time);
+                gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, playForm.time);
 
             }
             else

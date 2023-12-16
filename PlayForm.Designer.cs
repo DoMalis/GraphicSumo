@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ringSumo = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
             this.player2 = new System.Windows.Forms.PictureBox();
@@ -35,6 +36,8 @@
             this.p1Info = new System.Windows.Forms.Label();
             this.p2Info = new System.Windows.Forms.Label();
             this.food = new System.Windows.Forms.PictureBox();
+            this.TimeText = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ringSumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
@@ -45,9 +48,9 @@
             // ringSumo
             // 
             this.ringSumo.Image = global::SumoMVC.Properties.Resources.SumoRing;
-            this.ringSumo.Location = new System.Drawing.Point(199, 50);
+            this.ringSumo.Location = new System.Drawing.Point(205, 50);
             this.ringSumo.Name = "ringSumo";
-            this.ringSumo.Size = new System.Drawing.Size(394, 376);
+            this.ringSumo.Size = new System.Drawing.Size(388, 382);
             this.ringSumo.TabIndex = 2;
             this.ringSumo.TabStop = false;
             // 
@@ -105,12 +108,26 @@
             this.food.TabIndex = 6;
             this.food.TabStop = false;
             // 
+            // TimeText
+            // 
+            this.TimeText.AutoSize = true;
+            this.TimeText.Location = new System.Drawing.Point(374, 439);
+            this.TimeText.Name = "TimeText";
+            this.TimeText.Size = new System.Drawing.Size(0, 16);
+            this.TimeText.TabIndex = 7;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // PlayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(815, 460);
+            this.Controls.Add(this.TimeText);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player1);
             this.Controls.Add(this.food);
@@ -133,7 +150,7 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox player2;
         private System.Windows.Forms.PictureBox player1;
         private System.Windows.Forms.PictureBox ringSumo;
@@ -141,5 +158,7 @@
         private System.Windows.Forms.Label p1Info;
         private System.Windows.Forms.Label p2Info;
         private System.Windows.Forms.PictureBox food;
+        private System.Windows.Forms.Label TimeText;
+        private System.Windows.Forms.Timer timer2;
     }
 }
