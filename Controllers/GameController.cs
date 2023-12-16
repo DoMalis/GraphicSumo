@@ -69,9 +69,6 @@ namespace SumoMVC.Controllers
             {
                 if (countDownForm.ShowDialog() == DialogResult.OK)
                 {
-                    PlayForm playForm = new PlayForm(gameModel.Player1, gameModel.Player2);
-                    playForm.ShowDialog();
-                    CreateGameView();
                     GameLogic();
                     gameView.DisplayEndGame();
                     End();
@@ -79,6 +76,7 @@ namespace SumoMVC.Controllers
             }
 
 
+             //CreateGameView();
             //GameLogic();
             //gameView.DisplayEndGame();
             //End();
@@ -219,7 +217,7 @@ namespace SumoMVC.Controllers
 
 
 
-        //OBSŁUGA PORUSZANIA SIĘ
+       /* //OBSŁUGA PORUSZANIA SIĘ
         public void MovingStandard(Player player1, Player player2, ConsoleKey keyPressed, int sideLength)
         {
             //obsluga klawiszy 1 zawodnika, po każdym wcisnieciu strzałki kasujemy pozycję gracza na planszy i stawiamy w nowym miejscu
@@ -277,7 +275,7 @@ namespace SumoMVC.Controllers
                 player2.y++;
             }
 
-        }
+        }*/
         public void MovingWithObstacles(Player player1, Player player2, ConsoleKey keyPressed, int sideLength, bool[,] obstacleGrid)
         {
             //obsluga klawiszy 1 zawodnika, po każdym wcisnieciu strzałki kasujemy pozycję gracza na planszy i stawiamy w nowym miejscu
