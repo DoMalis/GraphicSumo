@@ -1,8 +1,10 @@
 ﻿using SumoMVC.Models;
+using SumoMVC.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -10,124 +12,180 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace SumoMVC
 {
     public partial class PlayForm : Form
     {
-        Player playerFirst;
-        Player playerSecond;
+        IGameModel gameModel;
+        Rectangle Map;
+        Rectangle player1Space;
+        Rectangle player2Space;
+        Rectangle foodSpace;
+        Food food1;
+
 
         private int _ticks; 
-        public PlayForm(Player p1, Player p2)
+        public PlayForm(IGameModel gameModel)
         {
             InitializeComponent();
-            playerFirst = p1;
-            playerSecond = p2;
+            player1.Enabled = true;
+            player2.Enabled = true;
             _ticks = 0;
+
+            this.gameModel=gameModel;
+            Map = new Rectangle(innerRing.Left, innerRing.Top, innerRing.Width, innerRing.Height);
+            //ustawiamy graczy w początkowych lokalizacjach
+            player1.Location = new Point(innerRing.Left, innerRing.Top);
+            player2.Location = new Point(innerRing.Right-player1.Width, innerRing.Bottom - player2.Width);
+            food1 = new Food();
         }
 
-      
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void PlayForm_Load(object sender, EventArgs e)
         {
-            player1.Location = new Point(playerFirst.x, playerFirst.y);
-            player2.Location = new Point(playerSecond.x, playerSecond.y);
-
-            //player1.Location = new Point(416,170);
-            //player2.Location = new Point(440, 396);
-
-            this.KeyDown += new KeyEventHandler(MovingWithoutObstacles);
             player1.Focus();
             player2.Focus();
+            this.KeyDown += new KeyEventHandler(MovingStandard);
 
         }
-        public void MovingWithoutObstacles(object sender, KeyEventArgs e)
+        public void MovingStandard(object sender, KeyEventArgs e)
         {
             int step = 5; // Step size for character movement
 
-
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left && Map.IntersectsWith(player2Space) && player2.Left - step >= Map.Left)
             {
                 player2.Left -= step;
+                gameModel.Player2.x = player2.Left;
+                gameModel.Player2.Weight--;
             }
-            else if (e.KeyCode == Keys.Right)
+            else if (e.KeyCode == Keys.Right && Map.IntersectsWith(player2Space) && player2.Right + step <= Map.Right)
             {
                 player2.Left += step;
+                gameModel.Player2.x = player2.Left;
+                gameModel.Player2.Weight--;
             }
-            else if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Up && Map.IntersectsWith(player2Space) && player2.Top - step >= Map.Top)
             {
                 player2.Top -= step;
+                gameModel.Player2.y = player2.Top;
+                gameModel.Player2.Weight--;
             }
-            else if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down && Map.IntersectsWith(player2Space) && player2.Bottom + step <= Map.Bottom)
             {
                 player2.Top += step;
+                gameModel.Player2.y = player2.Top;
+                gameModel.Player2.Weight--;
             }
-            else if (e.KeyCode == Keys.A)
+            else if (e.KeyCode == Keys.A && Map.IntersectsWith(player1Space) && player1.Left - step >= Map.Left)
             {
                 player1.Left -= step;
+                gameModel.Player1.x = player1.Left;
+                gameModel.Player1.Weight--;
             }
-            else if (e.KeyCode == Keys.D)
+            else if (e.KeyCode == Keys.D && Map.IntersectsWith(player1Space) && player1.Right + step <= Map.Right)
             {
                 player1.Left += step;
+                gameModel.Player1.x = player1.Left;
+                gameModel.Player1.Weight--;
             }
-            else if (e.KeyCode == Keys.W)
+            else if (e.KeyCode == Keys.W && Map.IntersectsWith(player1Space) && player1.Top - step >= Map.Top)
             {
                 player1.Top -= step;
+                gameModel.Player1.y = player1.Top;
+                gameModel.Player1.Weight--;
             }
-            else if (e.KeyCode == Keys.S)
+            else if (e.KeyCode == Keys.S && Map.IntersectsWith(player1Space) && player1.Bottom + step <= Map.Bottom)
             {
                 player1.Top += step;
-        }
-            //Rectangle Map = new Rectangle(0, 10, 30,20);
-            Rectangle Map = new Rectangle(416, 170, 440, 396);
-            Rectangle player1Space = new Rectangle(player1.Left, player1.Top, player1.Width, player1.Height);
-            Rectangle player2Space = new Rectangle(player2.Left, player2.Top, player2.Width, player2.Height);
-            /*Console.WriteLine($"X: {Map.X}");
-            Console.WriteLine($"Y: {Map.Y}");
-            Console.WriteLine($"Width: {Map.Width}");
-            Console.WriteLine($"Height: {Map.Height}");
-            Console.WriteLine($"XPlayer1: {player1Space.X}");
-            Console.WriteLine($"YPlayer1: {player1Space.Y}");
-            Console.WriteLine($"WidthPlayer1: {player1Space.Width}");
-            Console.WriteLine($"HeightPlayer1: {player1Space.Height}");
-            Console.WriteLine($"XPlayer2: {player2Space.X}");
-            Console.WriteLine($"YPlayer2: {player2Space.Y}");
-            Console.WriteLine($"WidthPlayer2: {player2Space.Width}");
-            Console.WriteLine($"HeightPlayer2Player2: {player2Space.Height}");*/
-
-            //to nizej nie działa 
-            if (Map.IntersectsWith(player1Space))
-            {
-                player1.Location = new Point(player1.Left, player1.Top);
+                gameModel.Player1.y = player1.Top;
+                gameModel.Player1.Weight--;
             }
-            if (Map.IntersectsWith(player2Space))
-            {
-                player2.Location = new Point(player2.Left, player2.Top);
+
+            player1Space = new Rectangle(player1.Left, player1.Top, player1.Width, player1.Height);
+            player2Space = new Rectangle(player2.Left, player2.Top, player2.Width, player2.Height);
+
+
+
+            if (player1Space.IntersectsWith(foodSpace) && food1.Eaten==false)
+            { 
+                gameModel.Player1.Weight += food1.kg;
+                food1.Eaten = true;
+                food.Hide();
             }
+            else if (player2Space.IntersectsWith(foodSpace) && food1.Eaten == false)
+            {
+                gameModel.Player2.Weight += food1.kg;
+                food1.Eaten = true;
+                food.Hide();
+            }
+            
+            FoodGenerator();
+
+            PlayerInfo();
+            if (FinishCondition(player1Space, player2Space) == 1)
+            {
+                MessageBox.Show("player1 won");
+                Close();
+            } 
+            else if (FinishCondition(player1Space, player2Space) == 2)   
+            { 
+                MessageBox.Show("player2 won");
+                Close(); 
+            }
+
+            else if (FinishCondition(player1Space, player2Space) == 0)
+            {
+
+            }
+            
+
+        }
+        private void FoodGenerator()
+        {
+            Random random = new Random();
+            int randNumber = random.Next(10, 60);
+
+            if (randNumber % 5 == 0 && food1.Eaten == true)  //jeśli jedzonko zostało już zjedzone, to moze powstać nowe
+            {
+                food1.Eaten = false;
+                food1.kg = randNumber;
+                food.Left = random.Next(innerRing.Left, innerRing.Right - food.Width);
+                food.Top = random.Next(innerRing.Top, innerRing.Bottom - food.Height);
+                food1.x = food.Left;
+                food1.y = food.Top;
+                foodSpace = new Rectangle(food.Left, food.Right, food.Width, food.Height);
+                food.Show();
+            }
+
         }
 
+        private int FinishCondition(Rectangle player1Space, Rectangle player2Space)
+        {
+            if (gameModel.Player1.Weight <= 0 || gameModel.Player2.Weight <= 0)
+            return gameModel.Player1.Weight > gameModel.Player2.Weight ? 1 : 2; 
+            else { 
+                Rectangle intersection = Rectangle.Intersect(player1Space, player2Space);
+            float intersectionArea = intersection.Width * intersection.Height;
+            // Calculate the area of player1Space
+            float player1Area = player1Space.Width * player1Space.Height;
+                // Check if 60% of player1Space covers player2Space
+                if (intersectionArea / player1Area >= 0.6)
+                {
+                    return gameModel.Player1.Weight > gameModel.Player2.Weight ? 1 : 2;
+
+                }
+            }
+            return 0;
+        }
+        private void PlayerInfo()
+        {
+
+            p1Info.Text = "Name: " + gameModel.Player1.Nick + "\nWeight: " + gameModel.Player1.Weight;
+            p2Info.Text = "Name: " + gameModel.Player2.Nick + "\nWeight: " + gameModel.Player2.Weight;
+
+        }
 
         public void DrawPlayer(Player player)
         {

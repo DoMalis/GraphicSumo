@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace SumoMVC.Controllers
 {
@@ -65,16 +66,27 @@ namespace SumoMVC.Controllers
 
             gameView.DisplayStartGame(); //nope
 
-            PlayForm playForm=new PlayForm(gameModel.Player1,gameModel.Player2);
-            playForm.ShowDialog();
-
-            CreateGameView();
             GameLogic();
             gameView.DisplayEndGame();
             End();
         }
 
+        public void GameLogic()
+        {
+            if (gameModel.Mode == 0)
+            {
+                TimeSpan time = new TimeSpan(2, 30, 0);
 
+                PlayForm playForm = new PlayForm(gameModel);
+                playForm.ShowDialog();
+                gameModel.GameResult = new GameResult((gameModel.Player1.Weight > gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, time);
+
+            }
+            else
+            {
+                //MovingWithObstacles(gameModel.Player1, gameModel.Player2, keyPressed, sideLength, gameModel.ObstacleGrid);
+            }
+        }
        public void CreateGameView()
        {
 
@@ -90,16 +102,16 @@ namespace SumoMVC.Controllers
         }
 
 
-        public void GameLogic()
+    /*    public void GameLogic()
         {
             Stopwatch gameTimer = new Stopwatch();
             System.Timers.Timer timer;
 
-            /* int sideLength = 10;
+            int sideLength = 10;
             gameModel.Player1.x = 11;
             gameModel.Player1.y = 9;
             gameModel.Player2.x = 10 + 2 * sideLength - 1;
-            gameModel.Player2.y = 8 + sideLength;*/
+            gameModel.Player2.y = 8 + sideLength;
             int sideLength = gameModel.SideLength;
             gameModel.Player1.x = gameModel.X0+1;
             gameModel.Player1.y = gameModel.Y0+1;
@@ -179,7 +191,7 @@ namespace SumoMVC.Controllers
             TimeSpan time = gameTimer.Elapsed;
             gameModel.GameResult= new GameResult((gameModel.Player1.Weight>gameModel.Player2.Weight) ? gameModel.Player1 : gameModel.Player2, time);
         }
-      
+    */  
         public bool CheckCollision(int x, int y, bool[,] obstacleGrid)
         {
             // sprawdzanie czy nowa pozycja koliduje z przeszkodą
