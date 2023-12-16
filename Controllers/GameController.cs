@@ -64,11 +64,30 @@ namespace SumoMVC.Controllers
             CreatePlayers(); //zrobione
             ChooseGameMode(); //zrobione
 
-            gameView.DisplayStartGame(); //nope
+            //gameView.DisplayStartGame(); //nope
+            using (CountDownForm countDownForm = new CountDownForm())
+            {
+                if (countDownForm.ShowDialog() == DialogResult.OK)
+                {
+                    PlayForm playForm = new PlayForm(gameModel.Player1, gameModel.Player2);
+                    playForm.ShowDialog();
+                    CreateGameView();
+                    GameLogic();
+                    gameView.DisplayEndGame();
+                    End();
+                }
+            }
 
-            GameLogic();
-            gameView.DisplayEndGame();
-            End();
+
+            //GameLogic();
+            //gameView.DisplayEndGame();
+            //End();
+            
+
+            //CreateGameView();
+            //GameLogic();
+            //gameView.DisplayEndGame();
+            //End();
         }
 
         public void GameLogic()

@@ -62,6 +62,12 @@
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\IGameController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="CountDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountDownForm.Designer.cs">
+      <DependentUpon>CountDownForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreatePlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChooseGameModeForm.resx">
       <DependentUpon>ChooseGameModeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountDownForm.resx">
+      <DependentUpon>CountDownForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreatePlayerForm.resx">
       <DependentUpon>CreatePlayerForm.cs</DependentUpon>
