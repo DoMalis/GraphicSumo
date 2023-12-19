@@ -15,7 +15,7 @@ namespace SumoMVC
     public partial class EndForm : Form
     {
         IGameModel gameModel;     
-            public EndForm(IGameModel gameModel)
+        public EndForm(IGameModel gameModel)
         {
             InitializeComponent();
             this.gameModel = gameModel;

@@ -65,7 +65,7 @@ namespace SumoMVC.Controllers
                 if (countDownForm.ShowDialog() == DialogResult.OK)
                 {
                     GameLogic();
-                    gameView.DisplayEndGame();
+                    //gameView.DisplayEndGame();
                     End();
                 }
             }
