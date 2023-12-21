@@ -188,5 +188,10 @@
   <ItemGroup>
     <None Include="bin\Debug\Images\SumoRing.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\ranking.txt" />
+    <Content Include="bin\rankingRandom.txt" />
+    <Content Include="bin\rankingStatic.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
