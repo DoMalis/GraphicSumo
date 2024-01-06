@@ -133,6 +133,16 @@ namespace SumoMVC.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cheese_burger_cartoon_vector_fotor_bg_remover_202401061577 {
+            get {
+                object obj = ResourceManager.GetObject("cheese-burger-cartoon-vector-fotor-bg-remover-202401061577", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap environment_09 {
             get {
                 object obj = ResourceManager.GetObject("environment_09", resourceCulture);

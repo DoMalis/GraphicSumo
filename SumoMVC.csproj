@@ -198,6 +198,7 @@
     <None Include="bin\Debug\Images\red %281%29.png" />
     <None Include="bin\Debug\Images\blue-fotor-bg-remover-2024010613440.png" />
     <None Include="bin\Debug\Images\red-fotor-bg-remover-20240106135247.png" />
+    <None Include="bin\Debug\Images\cheese-burger-cartoon-vector-fotor-bg-remover-202401061577.png" />
     <Content Include="bin\ranking.txt" />
     <Content Include="bin\rankingRandom.txt" />
     <Content Include="bin\rankingStatic.txt" />

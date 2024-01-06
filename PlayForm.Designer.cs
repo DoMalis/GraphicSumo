@@ -51,8 +51,9 @@
             this.p1Info.ForeColor = System.Drawing.Color.DarkRed;
             this.p1Info.Location = new System.Drawing.Point(12, 9);
             this.p1Info.Name = "p1Info";
-            this.p1Info.Size = new System.Drawing.Size(0, 29);
+            this.p1Info.Size = new System.Drawing.Size(144, 29);
             this.p1Info.TabIndex = 4;
+            this.p1Info.Text = "player1inf";
             // 
             // p2Info
             // 
@@ -63,8 +64,9 @@
             this.p2Info.ForeColor = System.Drawing.Color.DarkRed;
             this.p2Info.Location = new System.Drawing.Point(878, 9);
             this.p2Info.Name = "p2Info";
-            this.p2Info.Size = new System.Drawing.Size(0, 29);
+            this.p2Info.Size = new System.Drawing.Size(145, 29);
             this.p2Info.TabIndex = 5;
+            this.p2Info.Text = "player2inf";
             // 
             // TimeText
             // 
@@ -74,8 +76,9 @@
             this.TimeText.ForeColor = System.Drawing.Color.DarkRed;
             this.TimeText.Location = new System.Drawing.Point(502, 561);
             this.TimeText.Name = "TimeText";
-            this.TimeText.Size = new System.Drawing.Size(0, 35);
+            this.TimeText.Size = new System.Drawing.Size(101, 35);
             this.TimeText.TabIndex = 7;
+            this.TimeText.Text = "timer";
             // 
             // timer2
             // 
@@ -108,10 +111,11 @@
             // 
             // food
             // 
-            this.food.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.food.Location = new System.Drawing.Point(854, 274);
+            this.food.BackColor = System.Drawing.Color.Transparent;
+            this.food.Image = global::SumoMVC.Properties.Resources.cheese_burger_cartoon_vector_fotor_bg_remover_202401061577;
+            this.food.Location = new System.Drawing.Point(855, 276);
             this.food.Name = "food";
-            this.food.Size = new System.Drawing.Size(24, 22);
+            this.food.Size = new System.Drawing.Size(43, 42);
             this.food.TabIndex = 6;
             this.food.TabStop = false;
             this.food.Click += new System.EventHandler(this.food_Click);

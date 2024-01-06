@@ -94,10 +94,11 @@
             // 
             // food
             // 
-            this.food.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.food.Location = new System.Drawing.Point(959, 169);
+            this.food.BackColor = System.Drawing.Color.Transparent;
+            this.food.Image = global::SumoMVC.Properties.Resources.cheese_burger_cartoon_vector_fotor_bg_remover_202401061577;
+            this.food.Location = new System.Drawing.Point(940, 89);
             this.food.Name = "food";
-            this.food.Size = new System.Drawing.Size(24, 21);
+            this.food.Size = new System.Drawing.Size(40, 40);
             this.food.TabIndex = 10;
             this.food.TabStop = false;
             // 
