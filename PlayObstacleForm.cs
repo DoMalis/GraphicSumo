@@ -152,13 +152,13 @@ namespace SumoMVC
             PlayerInfo();
             if (FinishCondition(player1Space, player2Space) == 1)
             {
-                MessageBox.Show("player1 won");
+                MessageBox.Show(gameModel.Player1.Nick + " won");
                 time = DateTime.Now - startTime;
                 Close();
             }
             else if (FinishCondition(player1Space, player2Space) == 2)
             {
-                MessageBox.Show("player2 won");
+                MessageBox.Show(gameModel.Player2.Nick + " won");
                 time = DateTime.Now - startTime;
                 Close();
             }
