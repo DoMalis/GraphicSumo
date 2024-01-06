@@ -36,12 +36,10 @@
             this.player2 = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
             this.food = new System.Windows.Forms.PictureBox();
-            this.ringSumo = new System.Windows.Forms.PictureBox();
             this.innerRing = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.food)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ringSumo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.innerRing)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,9 +84,9 @@
             // 
             // player2
             // 
-            this.player2.BackColor = System.Drawing.Color.BurlyWood;
+            this.player2.BackColor = System.Drawing.Color.Transparent;
             this.player2.Image = global::SumoMVC.Properties.Resources.red_fotor_bg_remover_20240106135247;
-            this.player2.Location = new System.Drawing.Point(834, 323);
+            this.player2.Location = new System.Drawing.Point(870, 313);
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(64, 64);
             this.player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -98,7 +96,7 @@
             // 
             // player1
             // 
-            this.player1.BackColor = System.Drawing.Color.BurlyWood;
+            this.player1.BackColor = System.Drawing.Color.Transparent;
             this.player1.Image = global::SumoMVC.Properties.Resources.blue_fotor_bg_remover_2024010613440;
             this.player1.Location = new System.Drawing.Point(834, 193);
             this.player1.Name = "player1";
@@ -118,29 +116,15 @@
             this.food.TabStop = false;
             this.food.Click += new System.EventHandler(this.food_Click);
             // 
-            // ringSumo
-            // 
-            this.ringSumo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ringSumo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ringSumo.BackgroundImage = global::SumoMVC.Properties.Resources._2_sumo_ring_empty_allan_swart;
-            this.ringSumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ringSumo.Location = new System.Drawing.Point(153, 77);
-            this.ringSumo.Name = "ringSumo";
-            this.ringSumo.Size = new System.Drawing.Size(736, 481);
-            this.ringSumo.TabIndex = 2;
-            this.ringSumo.TabStop = false;
-            // 
             // innerRing
             // 
             this.innerRing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.innerRing.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.innerRing.Location = new System.Drawing.Point(310, 121);
+            this.innerRing.BackColor = System.Drawing.Color.Transparent;
+            this.innerRing.Location = new System.Drawing.Point(222, 62);
             this.innerRing.Name = "innerRing";
-            this.innerRing.Size = new System.Drawing.Size(423, 392);
+            this.innerRing.Size = new System.Drawing.Size(592, 484);
             this.innerRing.TabIndex = 3;
             this.innerRing.TabStop = false;
             // 
@@ -149,6 +133,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::SumoMVC.Properties.Resources._2_sumo_ring_empty_allan_swart;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1032, 603);
             this.Controls.Add(this.TimeText);
             this.Controls.Add(this.player2);
@@ -156,7 +142,6 @@
             this.Controls.Add(this.food);
             this.Controls.Add(this.p2Info);
             this.Controls.Add(this.p1Info);
-            this.Controls.Add(this.ringSumo);
             this.Controls.Add(this.innerRing);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "PlayForm";
@@ -166,7 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.food)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ringSumo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.innerRing)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,7 +160,6 @@
         #endregion
         private System.Windows.Forms.PictureBox player2;
         private System.Windows.Forms.PictureBox player1;
-        private System.Windows.Forms.PictureBox ringSumo;
         private System.Windows.Forms.PictureBox innerRing;
         private System.Windows.Forms.Label p1Info;
         private System.Windows.Forms.Label p2Info;

@@ -39,7 +39,6 @@
             this.obstacle1 = new System.Windows.Forms.PictureBox();
             this.player2 = new System.Windows.Forms.PictureBox();
             this.player1 = new System.Windows.Forms.PictureBox();
-            this.sumoRing = new System.Windows.Forms.PictureBox();
             this.innerRing = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.food)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.obstacle3)).BeginInit();
@@ -47,7 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.obstacle1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sumoRing)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.innerRing)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,9 +133,9 @@
             // 
             // player2
             // 
-            this.player2.BackColor = System.Drawing.Color.BurlyWood;
+            this.player2.BackColor = System.Drawing.Color.Transparent;
             this.player2.Image = global::SumoMVC.Properties.Resources.blue_fotor_bg_remover_2024010613440;
-            this.player2.Location = new System.Drawing.Point(940, 474);
+            this.player2.Location = new System.Drawing.Point(752, 479);
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(64, 64);
             this.player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -147,9 +145,9 @@
             // 
             // player1
             // 
-            this.player1.BackColor = System.Drawing.Color.BurlyWood;
+            this.player1.BackColor = System.Drawing.Color.Transparent;
             this.player1.Image = global::SumoMVC.Properties.Resources.red_fotor_bg_remover_20240106135247;
-            this.player1.Location = new System.Drawing.Point(940, 404);
+            this.player1.Location = new System.Drawing.Point(221, 56);
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(64, 64);
             this.player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -157,29 +155,15 @@
             this.player1.TabStop = false;
             this.player1.Click += new System.EventHandler(this.player1_Click);
             // 
-            // sumoRing
-            // 
-            this.sumoRing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.sumoRing.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.sumoRing.BackgroundImage = global::SumoMVC.Properties.Resources._2_sumo_ring_empty_allan_swart;
-            this.sumoRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.sumoRing.Location = new System.Drawing.Point(118, 41);
-            this.sumoRing.Name = "sumoRing";
-            this.sumoRing.Size = new System.Drawing.Size(777, 512);
-            this.sumoRing.TabIndex = 2;
-            this.sumoRing.TabStop = false;
-            // 
             // innerRing
             // 
             this.innerRing.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.innerRing.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.innerRing.Location = new System.Drawing.Point(272, 82);
+            this.innerRing.BackColor = System.Drawing.Color.Transparent;
+            this.innerRing.Location = new System.Drawing.Point(221, 56);
             this.innerRing.Name = "innerRing";
-            this.innerRing.Size = new System.Drawing.Size(463, 429);
+            this.innerRing.Size = new System.Drawing.Size(595, 487);
             this.innerRing.TabIndex = 3;
             this.innerRing.TabStop = false;
             // 
@@ -188,6 +172,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::SumoMVC.Properties.Resources._2_sumo_ring_empty_allan_swart;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1032, 603);
             this.Controls.Add(this.player2Info);
             this.Controls.Add(this.player1Info);
@@ -198,7 +184,6 @@
             this.Controls.Add(this.obstacle1);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player1);
-            this.Controls.Add(this.sumoRing);
             this.Controls.Add(this.innerRing);
             this.Name = "PlayObstacleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -210,7 +195,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.obstacle1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sumoRing)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.innerRing)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,7 +202,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox sumoRing;
         private System.Windows.Forms.PictureBox innerRing;
         private System.Windows.Forms.PictureBox player1;
         private System.Windows.Forms.PictureBox player2;
