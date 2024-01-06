@@ -55,7 +55,7 @@ namespace SumoMVC
         }
         public void MovingStandard(object sender, KeyEventArgs e)
         {
-            int step = 15; // Step size for character movement
+            int step = 10; // Step size for character movement
 
             if (e.KeyCode == Keys.Left && Map.IntersectsWith(player2Space) && player2.Left - step >= Map.Left)
             {

@@ -61,7 +61,7 @@ namespace SumoMVC
 
         public void MovingObstacle(object sender, KeyEventArgs e)
         {
-            int step = 15; // Step size for character movement
+            int step = 10; // Step size for character movement
             if (e.KeyCode == Keys.Left && Map.IntersectsWith(player2Space) && player2.Left - step >= Map.Left
   &&!checkCollision(new Rectangle(player2.Left-step, player2.Top, player2.Width, player2.Height))
 )
