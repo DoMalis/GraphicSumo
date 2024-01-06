@@ -63,9 +63,69 @@ namespace SumoMVC.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1_sumo_ring_empty_allan_swart {
+            get {
+                object obj = ResourceManager.GetObject("1-sumo-ring-empty-allan-swart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1000_F_321935604_fVLVGuR795RnAGpvhcxRxHTpaA48rJBM {
+            get {
+                object obj = ResourceManager.GetObject("1000_F_321935604_fVLVGuR795RnAGpvhcxRxHTpaA48rJBM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _2_sumo_ring_empty_allan_swart {
+            get {
+                object obj = ResourceManager.GetObject("2-sumo-ring-empty-allan-swart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3_sumo_ring_empty_allan_swart {
+            get {
+                object obj = ResourceManager.GetObject("3-sumo-ring-empty-allan-swart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap block_05 {
             get {
                 object obj = ResourceManager.GetObject("block_05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blue {
+            get {
+                object obj = ResourceManager.GetObject("blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap blue_fotor_bg_remover_2024010613440 {
+            get {
+                object obj = ResourceManager.GetObject("blue-fotor-bg-remover-2024010613440", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +166,36 @@ namespace SumoMVC.Properties {
         internal static System.Drawing.Bitmap player_23 {
             get {
                 object obj = ResourceManager.GetObject("player_23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red {
+            get {
+                object obj = ResourceManager.GetObject("red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red__1_ {
+            get {
+                object obj = ResourceManager.GetObject("red (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_fotor_bg_remover_20240106135247 {
+            get {
+                object obj = ResourceManager.GetObject("red-fotor-bg-remover-20240106135247", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

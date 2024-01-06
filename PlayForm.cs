@@ -55,7 +55,7 @@ namespace SumoMVC
         }
         public void MovingStandard(object sender, KeyEventArgs e)
         {
-            int step = 5; // Step size for character movement
+            int step = 15; // Step size for character movement
 
             if (e.KeyCode == Keys.Left && Map.IntersectsWith(player2Space) && player2.Left - step >= Map.Left)
             {
@@ -208,6 +208,16 @@ namespace SumoMVC
         }
 
         private void food_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void player1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void player2_Click(object sender, EventArgs e)
         {
 
         }

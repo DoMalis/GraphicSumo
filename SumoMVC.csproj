@@ -189,6 +189,15 @@
     <None Include="bin\Debug\Images\SumoRing.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Images\blue.png" />
+    <None Include="bin\Debug\Images\red.png" />
+    <None Include="bin\Debug\Images\1000_F_321935604_fVLVGuR795RnAGpvhcxRxHTpaA48rJBM.jpg" />
+    <None Include="bin\Debug\Images\3-sumo-ring-empty-allan-swart.jpg" />
+    <None Include="bin\Debug\Images\1-sumo-ring-empty-allan-swart.jpg" />
+    <None Include="bin\Debug\Images\2-sumo-ring-empty-allan-swart.jpg" />
+    <None Include="bin\Debug\Images\red %281%29.png" />
+    <None Include="bin\Debug\Images\blue-fotor-bg-remover-2024010613440.png" />
+    <None Include="bin\Debug\Images\red-fotor-bg-remover-20240106135247.png" />
     <Content Include="bin\ranking.txt" />
     <Content Include="bin\rankingRandom.txt" />
     <Content Include="bin\rankingStatic.txt" />

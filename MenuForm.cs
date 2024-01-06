@@ -23,7 +23,7 @@ namespace SumoMVC
         private void button1_Click(object sender, EventArgs e)
         {
 
-            this.Hide();
+            //this.Hide();
             IGameView gV= new GameView();
             IGameModel gM=new GameModel();
             GameController gC = new GameController(gV,gM);
@@ -48,7 +48,7 @@ namespace SumoMVC
             aboutForm.Show();
 
             // ukrywanie bieżącego formularza MenuForm
-            this.Hide();
+            //this.Hide();
 
         }
         
@@ -56,14 +56,14 @@ namespace SumoMVC
         {
             ExitForm exitForm = new ExitForm();
             exitForm.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             RankingForm rankingForm = new RankingForm();
             rankingForm.Show();
-            this.Hide();
+            //this.Hide();
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -71,5 +71,9 @@ namespace SumoMVC
 
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,32 +35,46 @@
             // 
             // yesButton
             // 
-            this.yesButton.Location = new System.Drawing.Point(339, 187);
+            this.yesButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.yesButton.BackColor = System.Drawing.Color.DarkRed;
+            this.yesButton.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yesButton.Location = new System.Drawing.Point(428, 234);
             this.yesButton.Name = "yesButton";
-            this.yesButton.Size = new System.Drawing.Size(75, 23);
+            this.yesButton.Size = new System.Drawing.Size(195, 54);
             this.yesButton.TabIndex = 0;
             this.yesButton.Text = "Yes";
-            this.yesButton.UseVisualStyleBackColor = true;
+            this.yesButton.UseVisualStyleBackColor = false;
             this.yesButton.Click += new System.EventHandler(this.yesButton_Click);
             // 
             // noButton
             // 
-            this.noButton.Location = new System.Drawing.Point(339, 233);
+            this.noButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noButton.BackColor = System.Drawing.Color.DarkRed;
+            this.noButton.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noButton.Location = new System.Drawing.Point(428, 309);
             this.noButton.Name = "noButton";
-            this.noButton.Size = new System.Drawing.Size(75, 23);
+            this.noButton.Size = new System.Drawing.Size(195, 54);
             this.noButton.TabIndex = 1;
             this.noButton.Text = "No";
-            this.noButton.UseVisualStyleBackColor = true;
+            this.noButton.UseVisualStyleBackColor = false;
             this.noButton.Click += new System.EventHandler(this.noButton_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(186, 134);
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
+            this.label1.Location = new System.Drawing.Point(178, 129);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 25);
+            this.label1.Size = new System.Drawing.Size(692, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Would you like to safe winner\'s score?";
             // 
@@ -68,11 +82,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::SumoMVC.Properties.Resources._1_sumo_ring_empty_allan_swart;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1032, 603);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noButton);
             this.Controls.Add(this.yesButton);
             this.Name = "EndForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EndForm";
             this.ResumeLayout(false);
             this.PerformLayout();
