@@ -91,7 +91,6 @@ namespace SumoMVC
         private static void PlayBackgroundMusic()
         {
 
-            //string soundFilePath = "C:\\Users\\justy\\Desktop\\GraphicSumo\\Sound\\2023-09-07_-_Preparing_For_Battle_-_www.FesliyanStudios.com.wav";
             string soundFilePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Sound\2023-09-07_-_Preparing_For_Battle_-_www.FesliyanStudios.com.wav";
 
             if (File.Exists(soundFilePath))
