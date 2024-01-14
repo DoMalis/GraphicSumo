@@ -63,65 +63,56 @@ namespace SumoMVC
         {
             int step = 10; // Step size for character movement
             if (e.KeyCode == Keys.Left && Map.IntersectsWith(player2Space) && player2.Left - step >= Map.Left
-  &&!checkCollision(new Rectangle(player2.Left-step, player2.Top, player2.Width, player2.Height))
-)
+  &&!checkCollision(new Rectangle(player2.Left-step, player2.Top, player2.Width, player2.Height)))
             {
                 player2.Left -= step;
                 gameModel.Player2.x = player2.Left;
                 gameModel.Player2.Weight--;
             }
             else if (e.KeyCode == Keys.Right && Map.IntersectsWith(player2Space) && player2.Right + step <= Map.Right
-                  && !checkCollision(new Rectangle(player2.Left + step, player2.Top, player2.Width, player2.Height))
-)
+                  && !checkCollision(new Rectangle(player2.Left + step, player2.Top, player2.Width, player2.Height)))
             {
                 player2.Left += step;
                 gameModel.Player2.x = player2.Left;
                 gameModel.Player2.Weight--;
             }
             else if (e.KeyCode == Keys.Up && Map.IntersectsWith(player2Space) && player2.Top - step >= Map.Top
-                  && !checkCollision(new Rectangle(player2.Left, player2.Top - step, player2.Width, player2.Height))
-)
+                  && !checkCollision(new Rectangle(player2.Left, player2.Top - step, player2.Width, player2.Height)))
             {
                 player2.Top -= step;
                 gameModel.Player2.y = player2.Top;
                 gameModel.Player2.Weight--;
             }
             else if (e.KeyCode == Keys.Down && Map.IntersectsWith(player2Space) && player2.Bottom + step <= Map.Bottom
-            && !checkCollision(new Rectangle(player2.Left, player2.Top + step, player2.Width, player2.Height))
-            )
+            && !checkCollision(new Rectangle(player2.Left, player2.Top + step, player2.Width, player2.Height)))
             {
                 player2.Top += step;
                 gameModel.Player2.y = player2.Top;
                 gameModel.Player2.Weight--;
             }
             else if (e.KeyCode == Keys.A && Map.IntersectsWith(player1Space) && player1.Left - step >= Map.Left
-                            && !checkCollision(new Rectangle(player1.Left-step, player1.Top, player1.Width, player1.Height))
-
-                )
+                            && !checkCollision(new Rectangle(player1.Left-step, player1.Top, player1.Width, player1.Height)))
             {
                 player1.Left -= step;
                 gameModel.Player1.x = player1.Left;
                 gameModel.Player1.Weight--;
             }
             else if (e.KeyCode == Keys.D && Map.IntersectsWith(player1Space) && player1.Right + step <= Map.Right
-              && !checkCollision(new Rectangle(player1.Left + step, player1.Top, player1.Width, player1.Height))
-)
+              && !checkCollision(new Rectangle(player1.Left + step, player1.Top, player1.Width, player1.Height)))
             {
                 player1.Left += step;
                 gameModel.Player1.x = player1.Left;
                 gameModel.Player1.Weight--;
             }
             else if (e.KeyCode == Keys.W && Map.IntersectsWith(player1Space) && player1.Top - step >= Map.Top
-                                            && !checkCollision(new Rectangle(player1.Left , player1.Top-step, player1.Width, player1.Height))
-)
+                                            && !checkCollision(new Rectangle(player1.Left , player1.Top-step, player1.Width, player1.Height)))
             {
                 player1.Top -= step;
                 gameModel.Player1.y = player1.Top;
                 gameModel.Player1.Weight--;
             }
             else if (e.KeyCode == Keys.S && Map.IntersectsWith(player1Space) && player1.Bottom + step <= Map.Bottom
-                                                            && !checkCollision(new Rectangle(player1.Left, player1.Top + step, player1.Width, player1.Height))
-)
+                                                            && !checkCollision(new Rectangle(player1.Left, player1.Top + step, player1.Width, player1.Height)))
             {
                 player1.Top += step;
                 gameModel.Player1.y = player1.Top;
@@ -131,25 +122,22 @@ namespace SumoMVC
             player1Space = new Rectangle(player1.Left, player1.Top, player1.Width, player1.Height);
             player2Space = new Rectangle(player2.Left, player2.Top, player2.Width, player2.Height);
 
-
-
-            if (
-                IsIntersectionOverXPercent(player1Space, foodSpace, 50f) && food1.Eaten == false)
+            if(IsIntersectionOverXPercent(player1Space, foodSpace, 50f) && food1.Eaten == false)
             {
                 gameModel.Player1.Weight += food1.kg;
                 food1.Eaten = true;
                 food.Hide();
             }
-            else if (IsIntersectionOverXPercent(player2Space, foodSpace, 50f) && food1.Eaten == false)
+            else if(IsIntersectionOverXPercent(player2Space, foodSpace, 50f) && food1.Eaten == false)
             {
                 gameModel.Player2.Weight += food1.kg;
                 food1.Eaten = true;
                 food.Hide();
             }
 
-           FoodGenerator();
-
+            FoodGenerator();
             PlayerInfo();
+
             if (FinishCondition(player1Space, player2Space) == 1)
             {
                 MessageBox.Show(gameModel.Player1.Nick + " won");
@@ -162,13 +150,6 @@ namespace SumoMVC
                 time = DateTime.Now - startTime;
                 Close();
             }
-
-            else if (FinishCondition(player1Space, player2Space) == 0)
-            {
-
-            }
-
-
         }
 
         private void PlayerInfo()
@@ -186,21 +167,18 @@ namespace SumoMVC
             {
                 player2Info.ForeColor = Color.Green;
                 player1Info.ForeColor = Color.DarkRed;
-
             }
             else
             {
                 player1Info.ForeColor = Color.DarkRed;
                 player2Info.ForeColor = Color.DarkRed;
             }
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             _ticks++;
             timeInfo.Text = "" + _ticks;
-
         }
         private int FinishCondition(Rectangle player1Space, Rectangle player2Space)
         {
@@ -256,17 +234,6 @@ namespace SumoMVC
             else if (rect.IntersectsWith(obstacle2Space)) return true;
             else if (rect.IntersectsWith(obstacle3Space)) return true;
             else return false;
-
-
-        }
-        private void player1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void player2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

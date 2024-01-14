@@ -51,7 +51,6 @@ namespace SumoMVC
             player2.Focus();
             this.KeyDown += new KeyEventHandler(MovingStandard);
             timer2.Start();
-
         }
         public void MovingStandard(object sender, KeyEventArgs e)
         {
@@ -109,8 +108,6 @@ namespace SumoMVC
             player1Space = new Rectangle(player1.Left, player1.Top, player1.Width, player1.Height);
             player2Space = new Rectangle(player2.Left, player2.Top, player2.Width, player2.Height);
 
-
-
             if ( IsIntersectionOverXPercent(player1Space,foodSpace,50f)&& food1.Eaten==false)
             { 
                 gameModel.Player1.Weight += food1.kg;
@@ -125,8 +122,8 @@ namespace SumoMVC
             }
             
             FoodGenerator();
-
             PlayerInfo();
+
             if (FinishCondition(player1Space, player2Space) == 1)
             {
                 MessageBox.Show(gameModel.Player1.Nick+" won");
@@ -157,7 +154,6 @@ namespace SumoMVC
                 foodSpace = new Rectangle(food.Left, food.Top, food.Width, food.Height);
                 food.Show();
             }
-
         }
 
         private int FinishCondition(Rectangle player1Space, Rectangle player2Space)
@@ -214,7 +210,6 @@ namespace SumoMVC
         {
             _ticks++;
             TimeText.Text = "" + _ticks;
-
         }
     }
 }

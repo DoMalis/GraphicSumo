@@ -24,14 +24,7 @@ namespace SumoMVC
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //MenuForm menuForm = new MenuForm();
-            //menuForm.Show();
             this.Close();
-        }
-
-        private void ExitForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

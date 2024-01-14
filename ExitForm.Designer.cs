@@ -86,7 +86,6 @@
             this.Name = "ExitForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExitForm";
-            this.Load += new System.EventHandler(this.ExitForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

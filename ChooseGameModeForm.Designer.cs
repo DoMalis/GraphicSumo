@@ -85,7 +85,6 @@
             this.Name = "ChooseGameModeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChooseGameModeForm";
-            this.Load += new System.EventHandler(this.ChooseGameModeForm_Load);
             this.ResumeLayout(false);
 
         }

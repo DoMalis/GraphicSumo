@@ -53,7 +53,6 @@ namespace SumoMVC
                 await Task.Delay(1000);
                 DialogResult = DialogResult.OK;
                 Close();
-               
             }
 
         }
@@ -62,9 +61,6 @@ namespace SumoMVC
         {
             if (countdownValue >= 1)
                 label1.Text = countdownValue.ToString();
-           
-        }
-
-        
+        }        
     }
 }

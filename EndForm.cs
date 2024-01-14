@@ -29,8 +29,6 @@ namespace SumoMVC
         private void yesButton_Click(object sender, EventArgs e)
         {
             string resultFilePath;
-            // SaveGameResult(gameMode, player1.Nick, player1.Weight, gameTimer.Elapsed.TotalSeconds.ToString("F0"));
-            // Ranking(gameMode);
 
             if (gameModel.Mode == 0)
             {
@@ -53,8 +51,6 @@ namespace SumoMVC
                 writer.WriteLine(gameModel.GameResult.PlayerName + "," + gameModel.GameResult.Score + "," + gameModel.GameResult.Time.ToString(@"hh\:mm\:ss"));
             }
             this.Hide();
-            
-
         }
     }
 }

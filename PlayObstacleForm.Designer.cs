@@ -142,7 +142,6 @@
             this.player2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player2.TabIndex = 5;
             this.player2.TabStop = false;
-            this.player2.Click += new System.EventHandler(this.player2_Click);
             // 
             // player1
             // 
@@ -154,7 +153,6 @@
             this.player1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.player1.TabIndex = 4;
             this.player1.TabStop = false;
-            this.player1.Click += new System.EventHandler(this.player1_Click);
             // 
             // innerRing
             // 

@@ -14,19 +14,7 @@ namespace SumoMVC
         {
             // Tworzenie modelu, widoku i kontrolera
             string[] options = { "Play", "About", "Ranking", "Exit" };
-            string prompt = @"
-
-
-
-                         
-                   _____ _   ____  ________     _____      _              _____                _     
-                  /  ___| | | |  \/  |  _  |_  |  ___|    | |     ___    /  __ \              | |    
-                  \ `--.| | | | .  . | | | (_) | |__  __ _| |_   ( _ )   | /  \/_ __ _   _ ___| |__  
-                   `--. \ | | | |\/| | | | |   |  __|/ _` | __|  / _ \/\ | |   | '__| | | / __| '_ \ 
-                  /\__/ / |_| | |  | \ \_/ /_  | |__| (_| | |_  | (_>  < | \__/\ |  | |_| \__ \ | | |
-                  \____/ \___/\_|  |_/\___/(_) \____/\__,_|\__|  \___/\/  \____/_|   \__,_|___/_| |_|
-                                                                                   
-               ";
+            string prompt = @"";
 
             IMenuModel menuModel = new MenuModel(prompt, options);
             IMenuView menuView = new MenuView();
