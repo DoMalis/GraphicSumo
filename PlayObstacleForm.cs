@@ -177,6 +177,23 @@ namespace SumoMVC
            player1Info.Text = "Name: " + gameModel.Player1.Nick + "\nWeight: " + gameModel.Player1.Weight;
            player2Info.Text = "Name: " + gameModel.Player2.Nick + "\nWeight: " + gameModel.Player2.Weight;
 
+            if (gameModel.Player1.Weight > gameModel.Player2.Weight)
+            {
+                player1Info.ForeColor = Color.Green;
+                player2Info.ForeColor = Color.DarkRed;
+            }
+            else if (gameModel.Player2.Weight > gameModel.Player1.Weight)
+            {
+                player2Info.ForeColor = Color.Green;
+                player1Info.ForeColor = Color.DarkRed;
+
+            }
+            else
+            {
+                player1Info.ForeColor = Color.DarkRed;
+                player2Info.ForeColor = Color.DarkRed;
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)

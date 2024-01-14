@@ -42,11 +42,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 31.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(166, 31);
+            this.label1.Location = new System.Drawing.Point(130, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(679, 59);
+            this.label1.Size = new System.Drawing.Size(776, 67);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome to Sumo Battle!";
             // 
@@ -133,9 +133,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.DarkRed;
             this.button1.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(436, 370);
+            this.button1.Location = new System.Drawing.Point(400, 370);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 39);
+            this.button1.Size = new System.Drawing.Size(237, 46);
             this.button1.TabIndex = 6;
             this.button1.Text = "Return to menu";
             this.button1.UseVisualStyleBackColor = false;
@@ -158,7 +158,6 @@
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AboutForm";
-            this.Load += new System.EventHandler(this.AboutForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

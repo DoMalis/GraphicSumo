@@ -111,8 +111,7 @@ namespace SumoMVC
 
 
 
-            if (
-                IsIntersectionOverXPercent(player1Space,foodSpace,50f)&& food1.Eaten==false)
+            if ( IsIntersectionOverXPercent(player1Space,foodSpace,50f)&& food1.Eaten==false)
             { 
                 gameModel.Player1.Weight += food1.kg;
                 food1.Eaten = true;
@@ -139,13 +138,7 @@ namespace SumoMVC
                 MessageBox.Show(gameModel.Player2.Nick+" won");
                 time = DateTime.Now - startTime;
                 Close(); 
-            }
-
-            else if (FinishCondition(player1Space, player2Space) == 0)
-            {
-
-            }
-            
+            }            
 
         }
         private void FoodGenerator()
@@ -198,27 +191,29 @@ namespace SumoMVC
             p1Info.Text = "Name: " + gameModel.Player1.Nick + "\nWeight: " + gameModel.Player1.Weight;
             p2Info.Text = "Name: " + gameModel.Player2.Nick + "\nWeight: " + gameModel.Player2.Weight;
 
+            if (gameModel.Player1.Weight > gameModel.Player2.Weight)
+            {
+                p1Info.ForeColor = Color.Green;
+                p2Info.ForeColor = Color.DarkRed;
+            }
+            else if(gameModel.Player2.Weight > gameModel.Player1.Weight)
+            {
+                p2Info.ForeColor = Color.Green;
+                p1Info.ForeColor = Color.DarkRed;
+
+            }
+            else
+            {
+                p1Info.ForeColor = Color.DarkRed;
+                p2Info.ForeColor = Color.DarkRed;
+            }
+
         }
 
         private void timer2_Tick(object sender, EventArgs e)
         {
             _ticks++;
             TimeText.Text = "" + _ticks;
-
-        }
-
-        private void food_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void player1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void player2_Click(object sender, EventArgs e)
-        {
 
         }
     }

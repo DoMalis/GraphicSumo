@@ -2,6 +2,8 @@
 using SumoMVC.Models;
 using SumoMVC.Views;
 using System;
+using System.IO;
+using System.Media;
 using System.Windows.Forms;
 
 namespace SumoMVC
@@ -36,6 +38,7 @@ namespace SumoMVC
 
             // Przypisanie zdarzenia Load do ustawienia początkowego widoku
             form1.Load += (sender, e) => menuController.ShowMenu();
+            PlayBackgroundMusic();
 
             // Przypisanie zdarzenia KeyDown do obsługi klawiszy
             form1.KeyDown += (sender, e) =>
@@ -63,6 +66,7 @@ namespace SumoMVC
                                 IGameView gameView = new GameView();
                                 IGameModel gameModel = new GameModel();
                                 GameController gameController = new GameController(gameView, gameModel);
+                               
                                 menuController.PlayOption(gameController);
                                 break;
                             case 1:
@@ -83,6 +87,18 @@ namespace SumoMVC
 
             // Uruchomienie aplikacji Windows Forms
             Application.Run(form1);
+        }
+        private static void PlayBackgroundMusic()
+        {
+
+            //string soundFilePath = "C:\\Users\\justy\\Desktop\\GraphicSumo\\Sound\\2023-09-07_-_Preparing_For_Battle_-_www.FesliyanStudios.com.wav";
+            string soundFilePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + @"\Sound\2023-09-07_-_Preparing_For_Battle_-_www.FesliyanStudios.com.wav";
+
+            if (File.Exists(soundFilePath))
+            {
+                    SoundPlayer soundPlayer = new SoundPlayer(soundFilePath);
+                    soundPlayer.PlayLooping();
+            }
         }
     }
 }

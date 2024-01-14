@@ -72,7 +72,7 @@ namespace SumoMVC
         {
             listView.Clear();
             listView.View = View.Details;
-            listView.Columns.Add("Name", 60);
+            listView.Columns.Add("Name", 85);
             listView.Columns.Add("Score", 50);
             listView.Columns.Add("Time (sec)", 65);
 
@@ -92,14 +92,6 @@ namespace SumoMVC
             this.Close();
         }
 
-        private void RankingForm_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -19,7 +19,7 @@ namespace SumoMVC
         {
             InitializeComponent();
             PlayerId = playerId;
-        textBox1.KeyDown += TextBox1_KeyDown; // Subscribe to KeyDown event
+            textBox1.KeyDown += TextBox1_KeyDown; // Subscribe to KeyDown event
 
         }
 
@@ -40,7 +40,8 @@ namespace SumoMVC
             else
             {
                 DialogResult = DialogResult.OK; // Zwróć OK, gdy gracz utworzy nazwę
-                this.Hide();            }
+                this.Hide();            
+            }
         }
 
 

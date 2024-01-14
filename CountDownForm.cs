@@ -20,6 +20,7 @@ namespace SumoMVC
             InitializeComponent();
             countdownValue = 3;
             label1.Text = countdownValue.ToString();
+            label2.Visible = false;
             countdownValue = 2;
 
             InitializeCountdownTimer();
@@ -45,7 +46,9 @@ namespace SumoMVC
             }
             else
             {
-                label1.Text = start;
+                label1.Visible = false;
+                label2.Visible = true;
+                label2.Text = start;
                 ((Timer)sender).Stop();
                 await Task.Delay(1000);
                 DialogResult = DialogResult.OK;
@@ -62,9 +65,6 @@ namespace SumoMVC
            
         }
 
-        private void CountDownForm_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

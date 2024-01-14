@@ -189,6 +189,7 @@
     <None Include="bin\Debug\Images\SumoRing.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sound\2023-09-07_-_Preparing_For_Battle_-_www.FesliyanStudios.com.wav" />
     <None Include="bin\Debug\Images\blue.png" />
     <None Include="bin\Debug\Images\red.png" />
     <None Include="bin\Debug\Images\1000_F_321935604_fVLVGuR795RnAGpvhcxRxHTpaA48rJBM.jpg" />
