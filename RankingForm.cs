@@ -76,6 +76,8 @@ namespace SumoMVC
             listView.Columns.Add("Score", 50);
             listView.Columns.Add("Time (sec)", 65);
 
+            gameResults = gameResults.OrderBy(result => result.Time).ThenByDescending(result => result.Score).ToList();
+
             foreach (var result in gameResults)
             {
                 ListViewItem item = new ListViewItem(result.PlayerName);

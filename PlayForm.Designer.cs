@@ -62,7 +62,7 @@
             this.p2Info.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.p2Info.Font = new System.Drawing.Font("Showcard Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.p2Info.ForeColor = System.Drawing.Color.DarkRed;
-            this.p2Info.Location = new System.Drawing.Point(878, 9);
+            this.p2Info.Location = new System.Drawing.Point(865, 9);
             this.p2Info.Name = "p2Info";
             this.p2Info.Size = new System.Drawing.Size(145, 29);
             this.p2Info.TabIndex = 5;

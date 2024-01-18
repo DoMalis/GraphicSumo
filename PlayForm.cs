@@ -184,8 +184,8 @@ namespace SumoMVC
         private void PlayerInfo()
         {
 
-            p1Info.Text = "Name: " + gameModel.Player1.Nick + "\nWeight: " + gameModel.Player1.Weight;
-            p2Info.Text = "Name: " + gameModel.Player2.Nick + "\nWeight: " + gameModel.Player2.Weight;
+            p1Info.Text = "Name:\n" + gameModel.Player1.Nick + "\nWeight:\n" + gameModel.Player1.Weight;
+            p2Info.Text = "Name:\n " + gameModel.Player2.Nick + "\nWeight:\n" + gameModel.Player2.Weight;
 
             if (gameModel.Player1.Weight > gameModel.Player2.Weight)
             {
